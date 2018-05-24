@@ -24,7 +24,7 @@ def lambda_handler(event, context):
 
         response = client.publish(
             TargetArn='arn:aws:sns:eu-west-1:676831350542:tim',
-            Message=json.dumps({'default': json.dumps(response)}),
+            Message=json.dumps({'default': json.dumps(text)}),
             MessageStructure='json'
         )
     except botocore.exceptions.ClientError as e:
